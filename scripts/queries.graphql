@@ -1,0 +1,9 @@
+query Basic {
+  events {
+    id
+    title
+    date
+    organizer { id name }
+  }
+  users { id name }
+}

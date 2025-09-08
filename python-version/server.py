@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_graphql import GraphQLView
-from schema import schema
+from gql import schema
 
 
 def create_app():

@@ -13,11 +13,24 @@ python app.py
 
 ## Structure
 ```
-schema.py        # Définition (code-first) des types / enums / interface / union
-server.py        # Factory Flask + montage GraphQL
-app.py           # Entrée exécutable
-FRAGMENTS_EXAMPLE.graphql
+data/
+  models.py                  # Modèles simples en mémoire
+  repositories.py            # Accès / filtres / recherche
+gql/
+  interfaces.py              # Interface Node
+  enums.py                   # Enumérations
+  date_range.py              # Objet embarqué DateRange
+  user_type.py               # Type User + résolutions relationnelles
+  event_type.py              # Type Event + résolutions relationnelles
+  unions.py                  # Union SearchResult
+  query.py                   # Root Query
+  schema.py (+ __init__)     # Assemblage Graphene
+server.py                    # Factory Flask + route /graphql
+app.py                       # Entrée exécutable
+FRAGMENTS_EXAMPLE.graphql    # Exemples de fragments
 ```
+
+> Organisation inspirée de la version JS (résolveurs modulaires) pour illustrer la transposition code‑first.
 
 ## Concepts ajoutés
 - Interface `Node`

@@ -14,7 +14,13 @@ npm run dev
 src/
   data/mockData.js       # Données en mémoire
   schema/typeDefs.js     # Schéma SDL (schema-first)
-  resolvers/index.js     # Résolveurs
+  resolvers/             # Résolveurs modulaires
+    query.js             # Query root
+    user.js              # Champs du type User
+    event.js             # Champs du type Event
+    node.js              # Interface Node
+    searchResult.js      # Union SearchResult
+    index.js             # Agrégateur final
   server.js              # Entrée serveur Apollo
 FRAGMENTS_EXAMPLE.graphql
 ```

@@ -1,0 +1,12 @@
+fragment UserInfo on User { id name }
+
+query EventsWithParticipants {
+  events {
+    id
+    title
+    category
+    dateRange { start end }
+    organizer { ...UserInfo }
+    participants { ...UserInfo }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "graphql-course-monorepo",
+  "version": "1.0.0",
+  "description": "GraphQL Course with JavaScript, Python servers and React client",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start:server-js": "npm run dev --workspace=packages/server-js",
+    "start:server-python": "cd packages/server-python && python app.py",
+    "start:client": "npm start --workspace=packages/client-react",
+    "install:python": "cd packages/server-python && pip install -r requirements.txt",
+    "dev": "concurrently \"npm run start:server-js\" \"npm run start:client\"",
+    "build:client": "npm run build --workspace=packages/client-react",
+    "test:client": "npm test --workspace=packages/client-react"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "graphql",
+    "apollo",
+    "react",
+    "python",
+    "flask",
+    "graphene",
+    "monorepo",
+    "course"
+  ],
+  "author": "Othila Academy",
+  "license": "MIT"
+}

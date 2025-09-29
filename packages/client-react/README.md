@@ -1,4 +1,6 @@
-# Client React GraphQL
+# GraphQL Course - React Client
+
+This React client has been migrated from Create React App to Vite for better performance and modern tooling.
 
 Ce client React TypeScript utilise Apollo Client pour consommer les APIs GraphQL du cours. Il permet aux étudiants d'apprendre à :
 - Configurer Apollo Client
@@ -8,8 +10,45 @@ Ce client React TypeScript utilise Apollo Client pour consommer les APIs GraphQL
 
 ## Technologies utilisées
 - **React 18** avec TypeScript
+- **Vite** pour le développement et build (migration depuis Create React App)
 - **Apollo Client** pour GraphQL
+- **Vitest** pour les tests
 - **CSS moderne** avec variables et responsive design
+
+## Migration vers Vite
+
+Le projet a été migré de Create React App vers Vite pour:
+- **Performance**: Démarrage plus rapide (HMR instantané)
+- **Build moderne**: Utilisation d'ESBuild et Rollup
+- **Configuration simplifiée**: Moins de boilerplate
+- **Support TypeScript**: Intégré nativement
+
+## Installation
+
+Depuis la racine du monorepo:
+```bash
+npm install
+```
+
+Ou depuis ce répertoire:
+```bash
+cd packages/client-react
+npm install
+```
+
+## Scripts disponibles
+
+### `npm run dev`
+Lance l'application en mode développement sur http://localhost:3000 (Vite dev server)
+
+### `npm run build`
+Génère une version de production dans le dossier `build/`
+
+### `npm run preview`
+Prévisualise la version de production localement
+
+### `npm test`
+Lance les tests avec Vitest
 
 ## Fonctionnalités
 
@@ -42,16 +81,17 @@ src/
 └── App.css                # Styles de l'application
 ```
 
-## Scripts disponibles
+## Configuration des endpoints
 
-### `npm start`
-Lance l'application en mode développement sur http://localhost:3000
+Le client peut se connecter aux deux serveurs :
 
-### `npm run build`
-Génère une version de production dans le dossier `build/`
+### Serveur JavaScript (Apollo Server)
+- URL: `http://localhost:4000/graphql`
+- Apollo Sandbox disponible
 
-### `npm test`
-Lance les tests en mode watch
+### Serveur Python (Flask + Graphene)  
+- URL: `http://127.0.0.1:5000/graphql`
+- GraphiQL disponible
 
 ## Utilisation pédagogique
 
@@ -67,17 +107,12 @@ Lance les tests en mode watch
 3. Implémenter la gestion d'erreurs personnalisée
 4. Créer des mutations pour ajouter/modifier des événements
 
-## Configuration des endpoints
+## Configuration Vite
 
-Le client peut se connecter aux deux serveurs :
-
-### Serveur JavaScript (Apollo Server)
-- URL: `http://localhost:4000/graphql`
-- Apollo Sandbox disponible
-
-### Serveur Python (Flask + Graphene)  
-- URL: `http://127.0.0.1:5000/graphql`
-- GraphiQL disponible
+- `vite.config.ts` - Configuration principale Vite
+- `vitest.config.ts` - Configuration des tests
+- `tsconfig.json` - Configuration TypeScript pour les sources
+- `tsconfig.node.json` - Configuration TypeScript pour les outils de build
 
 ## Prochaines étapes
 

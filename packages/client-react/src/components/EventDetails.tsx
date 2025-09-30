@@ -162,14 +162,12 @@ const EventDetails: React.FC<EventDetailsProps> = ({
             </span>
           </div>
           
-          <div className="participants-progress">
             <div className="progress-bar">
               <div 
                 className="progress-fill"
                 style={{ width: `${(event.currentParticipants / event.maxParticipants) * 100}%` }}
               ></div>
             </div>
-          </div>
 
           <div className="participants-list">
             <div className="todo-section">
